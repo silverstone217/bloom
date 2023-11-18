@@ -12,7 +12,7 @@ import { authOptions } from '@/lib/auth';
 const getBlog:()=>Promise<{error: boolean, message? : string, data: BlogsType[]}> = async() =>{
   const URL = process.env.URL_PATH!
   try {
-      const res = await fetch(`${URL}/api/blog/get`);
+      const res = await fetch(`${URL}/api/blog/get`, {cache : "no-store"});
 
       if(res.ok){
         return res.json();
