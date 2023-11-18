@@ -4,8 +4,8 @@ import logo from '../../../public/images/cherry-blossom.svg';
 import Link from 'next/link';
 import BsSignOutBtn from '../signoutButton/BsSignOutBtn';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import BsSignBtn from '../signInButton/BsSignBtn';
+import { authOptions } from '@/lib/auth';
 
 
 const BigScreenHeader = async () => {

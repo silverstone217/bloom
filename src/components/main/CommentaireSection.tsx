@@ -1,5 +1,4 @@
 "use server"
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { prisma } from '@/lib/prisma';
 import { BlogsType } from '@/types/BlogType';
 import { getServerSession } from 'next-auth';
@@ -8,6 +7,7 @@ import Link from 'next/link';
 import React, { FC } from 'react';
 import CommentForm from '../form/CommentForm';
 import travel from '../../../public/images/travel2.jpg'
+import { authOptions } from '@/lib/auth';
 
 interface Props {
     blog :  BlogsType | undefined;

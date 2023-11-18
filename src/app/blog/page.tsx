@@ -2,7 +2,7 @@ import BigScreenHeader from '@/components/header/BigScreenHeader'
 import SmallScreenHeader from '@/components/header/SmallScreenHeader'
 import BlogMain from '@/components/main/BlogMain'
 import { prisma } from '@/lib/prisma'
-import { BlogType, BlogsType } from '@/types/BlogType'
+import { BlogsType } from '@/types/BlogType'
 import React from 'react'
 
 const getBlog = async() =>{

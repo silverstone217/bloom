@@ -1,8 +1,8 @@
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { countViews } from '@/app/ssr/blogcount';
 import BigScreenHeader from '@/components/header/BigScreenHeader';
 import SmallScreenHeader from '@/components/header/SmallScreenHeader';
 import CommentaireSection from '@/components/main/CommentaireSection';
+import { authOptions } from '@/lib/auth';
 import { BlogsType } from '@/types/BlogType';
 import { getServerSession } from 'next-auth';
 import Image from 'next/image';
