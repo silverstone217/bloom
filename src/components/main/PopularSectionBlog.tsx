@@ -19,7 +19,7 @@ const PopularSectionBlog:FC<DataProps> = ({blogs}) => {
     }).slice(0, 4)
 
   return (
-    <main className='md:-z-20 sm:-z-20 sm:h-3/5 md:h-3/5 h-3/4 w-full mt-3 bg-black-rgb1 justify-center items-center tracking-wider font-serif flex flex-col gap-2'>
+    <main className='sm:h-3/5 md:h-3/5 h-3/4 w-full mt-3 bg-black-rgb1 justify-center items-center tracking-wider font-serif flex flex-col gap-2'>
         <h2 className=' flex items-center justify-center text-3xl'>Popular Blogs</h2>
             <div className='sm:w-11/12 md:w-11/12 h-3/4   items-center justify-start w-5/6 p-2 flex flex-row overflow-y-hidden overflow-x-auto gap-8 sm:gap-4 
                 scroll-smooth nap-x-mandatory '>

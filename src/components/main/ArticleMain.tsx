@@ -7,7 +7,7 @@ import { IoIosArrowRoundForward } from "react-icons/io"
 const ArticleMain = () => {
   return (
     <article className='relative text-xl tracking-wider w-full h-full flex flex-col items-center 
-        justify-center gap-3 md:h-full sm:h-full transition-all duration-300 delay-150 ease-in sm:mt-16 md:mt-16 md:-z-0 sm:-z-0'>
+        justify-center gap-3 md:h-full sm:h-full transition-all duration-300 delay-150 ease-in sm:mt-16 md:mt-16'>
         <Image src={travel} alt='travel'className='absolute -z-20 h-full object-cover '/>
 
         <div className='flex flex-col bg-black-rgba w-full h-full items-start justify-center sm:pl-6 pl-56'>

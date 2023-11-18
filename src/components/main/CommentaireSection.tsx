@@ -38,7 +38,7 @@ const CommentaireSection: FC<Props> = async({blog}) => {
     const session = await getServerSession(authOptions);
     // const findName = await findCommentName(blog?.comments[0].userId)
   return (
-    <main className='md:-z-20 sm:-z-20  w-full mt-3 bg-black-rgb1 justify-center items-center tracking-wider font-serif flex flex-col gap-2'>
+    <main className='w-full mt-3 bg-black-rgb1 justify-center items-center tracking-wider font-serif flex flex-col gap-2'>
         
         <h2 className='flex items-center justify-center flex-row gap-2 w-10 h-10 text-xl'>Comments <span className='font-bold'>({blog?._count.comments})</span></h2>
 

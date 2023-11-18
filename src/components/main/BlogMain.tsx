@@ -24,7 +24,7 @@ const BlogMain: FC<Props> = ({blogs}) => {
 
   return (
     <main className={`relative text-xl tracking-wider w-full flex flex-col items-center mt-10 
-        justify-center gap-5  transition-all duration-300 delay-150 ease-in md:-z-0 -z-0`}>
+        justify-center gap-5  transition-all duration-300 delay-150 ease-in`}>
         <header className='relative w-full flex items-center justify-center gap-8 flex-wrap flex-row my-3'>
             <form className='w-1/2 sm:w-4/5 md:w-4/5 h-14 flex flex-rowitems-center bg-black-rgb px-1 rounded-md'>
                 <IoIosSearch size={20} className="h-full w-8 flex items-center justify-center" />
