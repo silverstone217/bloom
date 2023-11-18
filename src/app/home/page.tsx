@@ -7,22 +7,19 @@ import PopularSectionBlog from '@/components/main/PopularSectionBlog';
 import { BlogsType } from '@/types/BlogType';
 import LatestSectionBlog from '@/components/main/LatestSectionBlog';
 import { authOptions } from '@/lib/auth';
+import { prisma } from '@/lib/prisma';
 
 
-const getBlog:()=>Promise<{error: boolean, message? : string, data: BlogsType[]}> = async() =>{
-  const URL = process.env.URL_PATH!
-  try {
-      const res = await fetch(`${URL}/api/blog/get`, {cache : "no-store"});
-
-      if(res.ok){
-        return res.json();
+const getBlog = async() =>{
+  const blogs = await prisma.blog.findMany({
+      include : {
+          _count : true,
+          stats : true,
+          comments : true
       }
-      return [];
+  });
 
-  } catch (error) {
-      const err = error as Error
-      console.log(err.message)
-  }
+  return blogs as unknown as BlogsType[];
 }
 
 const page = async () => {
@@ -36,8 +33,8 @@ const page = async () => {
           <BigScreenHeader/>
           <SmallScreenHeader/>
           <ArticleMain/>
-          <PopularSectionBlog blogs={blogs.data} />
-          <LatestSectionBlog blogs={blogs.data} />
+          <PopularSectionBlog blogs={blogs} />
+          <LatestSectionBlog blogs={blogs} />
        </div>
     </main>
   )

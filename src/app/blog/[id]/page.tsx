@@ -3,40 +3,56 @@ import BigScreenHeader from '@/components/header/BigScreenHeader';
 import SmallScreenHeader from '@/components/header/SmallScreenHeader';
 import CommentaireSection from '@/components/main/CommentaireSection';
 import { authOptions } from '@/lib/auth';
+import { prisma } from '@/lib/prisma';
 import { BlogsType } from '@/types/BlogType';
 import { getServerSession } from 'next-auth';
 import Image from 'next/image';
 import React from 'react';
-// import { revalidatePath } from 'next/cache'
 
-const URL = process.env.URL_PATH!
-const getBlog:()=>Promise<{error: boolean, message? : string, data: BlogsType[]}> = async() =>{
+
+// const URL = process.env.URL_PATH!
+// const getBlog:()=>Promise<{error: boolean, message? : string, data: BlogsType[]}> = async() =>{
     
-    try {
-        const res = await fetch(`${URL}/api/blog/get`, {cache : "no-store"});
+//     try {
+//         const res = await fetch(`${URL}/api/blog/get`, {cache : "no-store"});
   
-        if(res.ok){
-          // console.log(res, "OK!");
-          return res.json();
+//         if(res.ok){
+//           // console.log(res, "OK!");
+//           return res.json();
+//         }
+//         return [];
+  
+//     } catch (error) {
+//         const err = error as Error
+//         console.log(err.message)
+//     }
+//   }
+
+  const getBlog = async(id:string) =>{
+    const blogs = await prisma.blog.findUnique({
+        where : {
+            id : id
+        },
+        include : {
+            _count : true,
+            stats : true,
+            comments : true,
+            user : true
         }
-        return [];
+    });
   
-    } catch (error) {
-        const err = error as Error
-        console.log(err.message)
-    }
+    return blogs as unknown as BlogsType;
   }
 
 const page = async ({params}: {params : {id : string}}) => {
 
     const session = await getServerSession(authOptions);
-    const getMyOneBlog = await getBlog();
-    const data = getMyOneBlog && getMyOneBlog.data.find(blog => blog.id === params.id);
+    const getMyOneBlog = await getBlog(params.id);
+    const data = getMyOneBlog;
     const views = data?._count?.stats ?? 0
     const getTime= data && new Date(data.createdAt);
     setTimeout(async() =>{
         await countViews(params.id, session);
-        // revalidatePath(`${URL}/blog/${params.id}`)
     }, 5000);
 
     

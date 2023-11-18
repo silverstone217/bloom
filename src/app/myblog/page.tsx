@@ -6,24 +6,37 @@ import { redirect } from 'next/navigation';
 import { BlogsType } from '@/types/BlogType';
 import MyBlogList from '@/components/main/MyBlogList';
 import { authOptions } from '@/lib/auth';
+import { prisma } from '@/lib/prisma';
 
 
-const getBlog:()=>Promise<{error: boolean, message? : string, data: BlogsType[]}> = async() =>{
-    const URL = process.env.URL_PATH!
-    try {
-        const res = await fetch(`${URL}/api/blog/get`, {cache: "no-store"});
+// const getBlog:()=>Promise<{error: boolean, message? : string, data: BlogsType[]}> = async() =>{
+//     const URL = process.env.URL_PATH!
+//     try {
+//         const res = await fetch(`${URL}/api/blog/get`, {cache: "no-store"});
   
-        if(res.ok){
-          // console.log(res, "OK!");
-          return res.json();
-        }
-        return [];
+//         if(res.ok){
+//           // console.log(res, "OK!");
+//           return res.json();
+//         }
+//         return [];
   
-    } catch (error) {
-        const err = error as Error
-        console.log(err.message)
-    }
-  }
+//     } catch (error) {
+//         const err = error as Error
+//         console.log(err.message)
+//     }
+//   }
+
+const getBlog = async() =>{
+  const blogs = await prisma.blog.findMany({
+      include : {
+          _count : true,
+          stats : true,
+          comments : true
+      }
+  });
+
+  return blogs as unknown as BlogsType[];
+}
 
 const page = async() => {
     
@@ -40,7 +53,7 @@ const page = async() => {
        <div className=" w-full h-screen  overflow-x-hidden overflow-y-auto " >
           <BigScreenHeader/>
           <SmallScreenHeader/>
-          <MyBlogList blogs={myBlog.data}/>
+          <MyBlogList blogs={myBlog}/>
        </div>
     </main>
   )

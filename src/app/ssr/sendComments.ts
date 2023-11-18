@@ -12,11 +12,13 @@ export const sendComment = async (id:string, session: Session | null, text:strin
             data : {
                 text : text,
                 userId : session.user.id,
-                blogId : id
+                blogId : id,
+                image : session.user.image!,
+                name : session.user.name!
             }
          });
 
-        //  console.log("Sent", sendCom)
+        console.log(" Comment sent")
 
     } catch (error) {
         const err = error as Error;

@@ -16,7 +16,7 @@ export interface BlogsType{
     updatedAt : DateTime 
     author? : string
     userId  :string 
-    user   : User 
+    user   : User []
     comments : Comment[]
     genre : string
     stats  :   BlogStats[]
@@ -29,6 +29,8 @@ export interface BlogsType{
 export interface Comment {
     id:        string 
     text:      string
+    name :     string
+    image :    string
     userId:    string
     blogId:    string
     blog :     BlogsType[]
@@ -42,4 +44,13 @@ export interface BlogStats{
     blogId:    string
     blog :     BlogsType[]
     user?   : User
+}
+export interface User {
+    id: string
+  name: string
+  email: string
+  emailVerified: boolean | null,
+  image: string
+  createdAt: Date
+  updatedAt: Date
 }
