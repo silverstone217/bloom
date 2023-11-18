@@ -3,9 +3,11 @@ import { signIn } from 'next-auth/react'
 import React from 'react'
 import { FcGoogle } from 'react-icons/fc'
 
+const URL = process.env.URL_PATH
+
 const Login = () => {
   return (
-    <button onClick={()=>signIn("google", {callbackUrl : "http://localhost:3000/home"})}
+    <button onClick={()=>signIn("google", {callbackUrl : `${URL}/home`})}
           className=' group flex flex-row sm:w-5/6  w-3/4 h-16 mt-10 from-pink-gb1 via-pink-gb2 to-pink-gb3 items-center 
           justify-center gap-3 rounded-md bg-gradient-to-r hover:bg-none hover:border hover:border-pink-gb1
           transition duration-500 ease-in delay-200 hover:shadow-3xl '>
