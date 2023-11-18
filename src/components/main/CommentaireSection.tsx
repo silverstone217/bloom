@@ -46,7 +46,7 @@ const CommentaireSection: FC<Props> = async({blog}) => {
                 {
                     session?.user.id && blog?.id ?  <CommentForm session={session} id={blog?.id}/>
                     : <Link href="/" className='h-14 w-3/5 flex items-center justify-center p-2 text-xl 
-                        hover:shadow-3xl transition-all duration-300 delay-150 ease-in'>
+                        hover:shadow-3xl transition-all duration-300 delay-150 ease-in rounded-md'>
                         Login to comment
                     </Link>
                 }
