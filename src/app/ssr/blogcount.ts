@@ -41,7 +41,6 @@ export const countViews = async (id:string, session: Session | null) =>{
                 }
             });
 
-            // console.log(countBlog.views, "views created");
         
     } catch (error) {
         const err = error as Error;

@@ -46,7 +46,7 @@ const config: Config = {
       boxShadow :{
         "3xl" : "rgba(244, 171, 186, 0.25) 0px 54px 55px, rgba(248, 140, 174, 0.12) 0px -12px 30px, rgba(246, 152, 189, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(221, 149, 180, 0.09) 0px -3px 5px",
         "4xl" : "rgba(204, 21, 18, 0.25) 0px 54px 55px, rgba(127, 0, 0, 0.12) 0px -12px 30px, rgba(246, 152, 189, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(221, 149, 180, 0.09) 0px -3px 5px",
-        "5xl" : "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;"
+        "5xl" : "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px"
       },
       animation: {
         "animate-pulse"	: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
