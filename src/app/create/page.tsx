@@ -1,10 +1,11 @@
 import AddForm from '@/components/form/AddForm'
 import BigScreenHeader from '@/components/header/BigScreenHeader'
 import SmallScreenHeader from '@/components/header/SmallScreenHeader'
+import { authOptions } from '@/lib/auth'
 import { getServerSession } from 'next-auth'
 import { redirect } from 'next/navigation'
 import React from 'react'
-import { authOptions } from '../api/auth/[...nextauth]/route'
+
 
 const page = async () => {
  

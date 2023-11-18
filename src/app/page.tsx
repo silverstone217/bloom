@@ -3,15 +3,13 @@ import logo from '../../public/images/cherry-blossom.svg';
 import SectionHome from '@/components/SectionHome';
 import Login from '@/components/Login';
 import { getServerSession } from 'next-auth';
-import { authOptions } from './api/auth/[...nextauth]/route';
 import { redirect } from 'next/navigation';
+import { authOptions } from '@/lib/auth';
 
 
 export default async function Home() {
 
   const data = await getServerSession(authOptions);
-
-  // console.log(data?.user, "Welcome");
 
   if(data?.user){
     redirect('/home');

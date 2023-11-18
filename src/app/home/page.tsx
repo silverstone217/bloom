@@ -2,12 +2,11 @@ import BigScreenHeader from '@/components/header/BigScreenHeader';
 import SmallScreenHeader from '@/components/header/SmallScreenHeader';
 import { getServerSession } from 'next-auth';
 import React from 'react';
-import { authOptions } from '../api/auth/[...nextauth]/route';
-import { redirect } from 'next/navigation';
 import ArticleMain from '@/components/main/ArticleMain';
 import PopularSectionBlog from '@/components/main/PopularSectionBlog';
 import { BlogsType } from '@/types/BlogType';
 import LatestSectionBlog from '@/components/main/LatestSectionBlog';
+import { authOptions } from '@/lib/auth';
 
 
 const getBlog:()=>Promise<{error: boolean, message? : string, data: BlogsType[]}> = async() =>{

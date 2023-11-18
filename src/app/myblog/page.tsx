@@ -2,10 +2,10 @@ import BigScreenHeader from '@/components/header/BigScreenHeader'
 import SmallScreenHeader from '@/components/header/SmallScreenHeader'
 import { getServerSession } from 'next-auth';
 import React from 'react'
-import { authOptions } from '../api/auth/[...nextauth]/route';
 import { redirect } from 'next/navigation';
 import { BlogsType } from '@/types/BlogType';
 import MyBlogList from '@/components/main/MyBlogList';
+import { authOptions } from '@/lib/auth';
 
 
 const getBlog:()=>Promise<{error: boolean, message? : string, data: BlogsType[]}> = async() =>{
