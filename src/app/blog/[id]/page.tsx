@@ -58,7 +58,7 @@ const page = async ({params}: {params : {id : string}}) => {
     
 
   return (
-<main className="flex h-screen flex-col items-center w-screen justify-start p-0 relative overflow-x-hidden font-serif tracking-wider">
+<main className="flex h-screen flex-col items-center w-screen justify-start p-0 overflow-hidden font-serif tracking-wider">
     
     <div className='flex items-center w-screen justify-center p-0 relative overflow-x-hidden flex-row flex-wrap gap-8 overflow-y-auto'>
 

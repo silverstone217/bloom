@@ -94,6 +94,11 @@ export const genreList = [
         title : "Comics and Manga",
         value : "comics and manga",
     },
+    {
+        id:20,
+        title : "Religion",
+        value : "religion",
+    },
 ];
 
 export const phrase = [

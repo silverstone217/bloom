@@ -21,7 +21,7 @@ const CommentaireSection: FC<Props> = async({blog}) => {
   return (
     <main className='w-full mt-3 bg-black-rgb1 justify-center items-center tracking-wider font-serif flex flex-col gap-2'>
         
-        <h2 className='flex items-center justify-center flex-row gap-2 w-10 h-10 text-xl'>Comments <span className='font-bold'>({blog?._count.comments})</span></h2>
+        <h2 className='flex items-center justify-center flex-row gap-2 p-2 w-max bg-slate-500 h-10 text-xl'>Comments <span className='font-bold'>({blog?._count.comments})</span></h2>
 
         <div className='relative w-full flex items-center justify-center gap-8 flex-wrap flex-col'>
                 {

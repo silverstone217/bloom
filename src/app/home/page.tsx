@@ -28,8 +28,8 @@ const page = async () => {
 
 
   return (
-    <main className="flex h-screen flex-col items-center w-screen justify-start p-0 relative overflow-x-hidden">
-       <div className=" w-full h-screen  overflow-x-hidden overflow-y-auto " >
+    <main className="flex flex-col items-center w-screen justify-start p-0 overflow-hidden">
+       <div className=" w-full h-screen relative  overflow-x-hidden overflow-y-auto p-0 " >
           <BigScreenHeader/>
           <SmallScreenHeader/>
           <ArticleMain/>

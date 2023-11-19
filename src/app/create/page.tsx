@@ -16,8 +16,8 @@ const page = async () => {
   }
   
   return (
-    <main className="flex h-screen flex-col items-center w-screen justify-start p-0 relative tracking-wider"> 
-        <div className=" w-full h-screen  overflow-x-hidden overflow-y-auto ">
+    <main className="flex  flex-col items-center w-screen justify-start p-0  tracking-wider"> 
+        <div className=" w-full h-screen  overflow-x-hidden overflow-y-auto relative ">
             <BigScreenHeader/>
             <SmallScreenHeader/>
             <h1 className='w-full text-3xl h-16 flex items-center justify-center sm:mt-14 md:mt-14 text-center'>Create your own View</h1>

@@ -15,10 +15,10 @@ const CommentForm :FC<Props> = ({id, session}) => {
     const router = useRouter();
 
   return (
-        <form className='w-3/4 flex items-center justify-center p-2 flex-wrap gap-4'>
+        <form className='w-3/4  flex items-center justify-center p-2 flex-wrap gap-4'>
             <textarea value={comm} onChange={(event) => setComm(event.target.value)}
                 placeholder='comment something...' 
-                className='border border-white outline-none bg-transparent w-3/4 h-14 p-2 flex-shrink-0 rounded-md'/>
+                className='border border-white outline-none bg-transparent sm:w-full md:w-full w-3/4 h-14 p-2 flex-shrink-0 rounded-md'/>
             <button onClick={(e)=>{
                 e.preventDefault();
                     if(comm.replace(/\s/g, '') !== "" ){

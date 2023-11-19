@@ -38,7 +38,7 @@ const BlogMain: FC<Props> = ({blogs}) => {
         </header>
 
         <main className='relative w-full flex items-center justify-center gap-8 flex-wrap flex-col'>
-            <div className='relative sm:w-4/5 md:w-4/5 w-3/4 p-2 flex items-center justify-center gap-8 flex-wrap flex-row overflow-hidden'>
+            <div className='relative sm:w-11/12 md:w-11/12 w-3/4 p-2 flex items-center justify-center gap-8 flex-wrap flex-row overflow-hidden'>
                 {
                     filteredBlogs.map((blog)=>(
                         <Link href={`/blog/${blog.id}`} key={blog.id} className='flex flex-col h-full w-2/5 sm:flex-shrink-0 md:flex-shrink-0 sm:w-full md:w-full snap-start 
