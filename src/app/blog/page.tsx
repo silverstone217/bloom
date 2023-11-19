@@ -22,8 +22,8 @@ const page = async() => {
     const blogs = await getBlog() as BlogsType[]
 
   return (
-    <main className="flex h-screen flex-col items-center w-screen justify-start p-0 relative overflow-x-hidden font-serif tracking-wider">
-         <div className=" w-full h-screen  overflow-x-hidden overflow-y-auto sm:mt-14 md:mt-14 " >
+    <main className="flex flex-col items-center w-screen justify-start p-0  overflow-x-hidden font-serif tracking-wider">
+         <div className=" w-full h-screen relative overflow-x-hidden overflow-y-auto " >
             <BigScreenHeader/>
             <SmallScreenHeader/>
             <BlogMain blogs={blogs}/>
