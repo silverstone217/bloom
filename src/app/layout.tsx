@@ -10,6 +10,10 @@ const inter = Merriweather_Sans({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Bloom',
   description: 'Blog website for intrutive content, sharing opinions and views with others.',
+  verification : {
+    google : "googleb3f42dbd8b9d6e9b",
+    yandex: "0b10762e19895ec3"
+  }
 }
 
 export default function RootLayout({
