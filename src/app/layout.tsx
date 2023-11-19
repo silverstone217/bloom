@@ -9,11 +9,18 @@ const inter = Merriweather_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Bloom',
-  description: 'Blog website for intrutive content, sharing opinions and views with others.',
+  description: 'Blog website for intrutive content, sharing opinions and views with others. Build your specific contents, and share with people, become also an author.',
   verification : {
     google : "C2Vig2VHB0RzzQLqTqimzndGoZfV8fmCNYI1yMD9rHI",
-    yandex: "0b10762e19895ec3"
-  }
+    yandex: "0b10762e19895ec3",
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
+  category:"blog",
+  creator : "Stephane Mfuni",
+  keywords : "react, nextjs, blog, author, content",
+  
 }
 
 export default function RootLayout({
