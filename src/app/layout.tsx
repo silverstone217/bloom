@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   category:"blog",
   creator : "Stephane Mfuni",
   keywords : "react, nextjs, blog, author, content",
-  
 }
 
 export default function RootLayout({
